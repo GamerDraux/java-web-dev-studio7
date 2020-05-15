@@ -1,10 +1,43 @@
 package org.launchcode.studio7;
 
-public class CD {
+public class CD extends BaseDisc implements OpticalDisc {
+   private final String aType = "CD";
+   private final int trackCount;
 
-    // TODO: Implement your custom interface.
+    public CD(String aName, double aCapacity,
+              int aTrackCount) {
+        super(aName, aCapacity);
+        this.type = aType;
+        this.trackCount = aTrackCount;
+    }
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    public String getaType() {
+        return aType;
+    }
+
+    public int getTrackCount() {
+        return trackCount;
+    }
+
+    @Override
+    public void spinDisc() {
+        System.out.println("Buzzzzzzz..");
+    }
+
+    @Override
+    public void rewind() {
+        System.out.println("Rewinding");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Music Plays");
+
+    }
+
+    @Override
+    public void findTrack() {
+        System.out.println("Select Song");
+    }
 
 }

@@ -1,10 +1,39 @@
 package org.launchcode.studio7;
 
-public class DVD {
+import java.util.ArrayList;
 
-    // TODO: Implement your custom interface.
+public class DVD extends BaseDisc implements OpticalDisc{
+    private final String aType="DVD";
+    private final ArrayList<String> chapterList;
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    public DVD(String aName, double aCapacity,
+               ArrayList<String> aChapterList){
+        super(aName, aCapacity);
+        this.type=aType;
+        this.chapterList=aChapterList;
+    }
 
+    public ArrayList<String> getChapterList() {
+        return chapterList;
+    }
+
+    @Override
+    public void spinDisc() {
+        System.out.println("Whirr");
+    }
+
+    @Override
+    public void rewind() {
+        System.out.println("Rewinding");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Playing Movie");
+    }
+
+    @Override
+    public void findTrack() {
+        System.out.println("Select Chapter");
+    }
 }
