@@ -2,25 +2,22 @@ package org.launchcode.studio7;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args){
         ArrayList<BaseDisc> discCollection =
                 new ArrayList<>();
-        ArrayList<String> chapters =
-                new ArrayList<>();
-        chapters.add("Fight Scene");
-        chapters.add("Love Scene");
 
         CD cd1 = new CD("Jason Mraz: Waiting For My " +
                 "Rocket to Come", 200, 15);
         CD cd2 = new CD("Meatloaf: Bat out of Hell", 200,
                 10);
         DVD dvd1 = new DVD("Cloverfield", 4000,
-                chapters);
+                new ArrayList<>(Arrays.asList("Fight Scene", "Love Scene")));
         DVD dvd2 = new DVD("Star Wars", 4000,
-                new ArrayList<>());
+                new ArrayList<>(Arrays.asList("Scene 1", "Scene 2", "Scene 3", "Scene 4")));
         discCollection.add(cd1);
         discCollection.add(cd2);
         discCollection.add(dvd1);
